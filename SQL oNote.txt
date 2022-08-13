@@ -1,0 +1,7 @@
+- How to get data from a table?
+
+SELECT column_name1, column_name2
+FROM table_name;
+
+
+- 

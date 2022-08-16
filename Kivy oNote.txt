@@ -1,0 +1,165 @@
+======== LABEL ========
+
+- Why Label widget is used?
+
+For rendering text
+
+
+- Which strings are supported by Label widget
+
+ASCII & Unicode
+
+
+- Label import syntax
+
+from kivy.uix.label import Label
+
+
+- Example...
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+class Lbl(App):
+
+    def build(self):
+
+        lbl = Label(text = 'Bismillah')
+
+        return lbl
+
+lbl = Lbl()
+
+lbl.run()
+
+
+- How to write multilines in label?
+
+Its same as Python. We use \n as line break. e.g.
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+class Lbl(App):
+
+    def build(self):
+
+        lbl = Label(text = 'This is a \n
+                           'multiline \n'
+                           'string')
+
+        return lbl
+
+lbl = Lbl()
+
+lbl.run()
+
+
+- Can we markup texts in label?
+
+Yes. We can use BBCode style markups with kivy Label.
+
+
+- We should use which argument if we want to markup texts in Label?
+
+markup = True
+
+
+- How to bold?
+
+'[b] Text [/b]'
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+class Lbl(App):
+
+    def build(self):
+
+        lbl = Label(text = '[b]Bold Text[/b]', markup = True)
+
+        return lbl
+
+lbl = Lbl()
+
+lbl.run()
+
+
+- How to color text?
+
+'[color=color_code]text[/color]'
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+class Lbl(App):
+
+    def build(self):
+
+        lbl = Label(text = '[color=ff3300]Colorful Text!![/color]', markup = True)
+
+        return lbl
+
+lbl = Lbl()
+
+lbl.run()
+
+
+- We shouldn't use space between...
+
+We shouldn't use space between markup text and value. [color = ff0000] will not work while [color=ff0033] will work.
+
+
+- What is sp in font size?
+
+sp is Scale-Independent pixel. Here sp scale factor depends on a user settings. If you are familiar with dp then keep in mind sp = dp * scale.
+
+The dp has constant ratio transition to px: dp = px * ratio. Where ratio will never change on any particular device.
+
+While sp (s for scaled) has scalable ratio: sp = px * ratio * scale. Where ratio never changes, but scale is user configurable. This scale can be used by people who need larger font sizes, for example, to use device more comfortably. 
+
+
+- How to change font size in Label?
+
+font_size='20sp'
+
+from kivy.app import App
+from kivy.uix.label import Label
+
+class Lbl(App):
+
+    def build(self):
+
+        lbl = Label(text = 'This is large font',
+                    font_size='20sp')
+
+        return lbl
+
+lbl = Lbl()
+
+lbl.run()
+
+
+- How to italic text?
+
+'[i]text[/i]'
+
+
+- Kivy Label widget references documentaiton
+
+https://kivy.org/doc/stable/api-kivy.uix.label.html
+
+
+- A kivy button is actually a...
+
+Label
+
+
+Button Properties...
+
+- font_size
+
+btn = Button(text = "Button",
+	     font_size = 20)
+
+
